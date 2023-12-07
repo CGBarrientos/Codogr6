@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>FALSEBUSTER | Modificar peliculas</title>
+</head>
+<body>
+    <h1>FALSEBUSTER</h1>
+    <h2>Modificar peliculas</h2>
+    <h3>Codo a Codo | 2023</h3>
+    <div id="app">
+        <form @submit.prevent="obtenerPelicula">
+            <label for="IDpeli">Código</label>
+            <input type="text" v-model="IDpeli" required><br>
+            <button type="submit">Modificar peli</button>
+            <a href="index.html">Menú principal</a>
+        </form>
+        <div v-if="mostrarDatosPelicula">
+            <h3>Peliculas</h3>
+            <form @submit.prevent="guardarCambios">
+                <label for="tituloModificar">Titulo: </label>
+                <input type="text" id="tituloModificar" v-model="Titulo" required><br>
+
+                <label for="añoModificar">Año: </label>
+                <input type="number" id="añoModificar" v-model="Año" required><br>
+
+                <label for="directorModificar">Director: </label>
+                <input type="text" id="directorModificar" v-model="Director" required><br>
+
+                <label for="clasifModificar">Clasificación: </label>
+                <input type="text" id="clasifModificar" v-model="Clasificación" required><br>
+
+                <label for="caliModificar">Calificación: </label>
+                <input type="number" id="caliModificar" v-model="Calificación" required><br>
+
+                <img v-if="Imagen_url && !imagen seleccionada" src="'static/img/' + Imagen_url "alt="imagen de la pelicula" style="max-width: 250px;">
+                <img v-if="imagen seleccionada" src="imagenUrlTemp"alt="vista previa de la nueva imagen" style="max-width: 250px;">
+
+
+                <label for="nuevaImagen">Nueva imagen: </label>
+                <input type="file" id="nuevaImagen" change="seleccionarImagen"><br>
+
+                <button type="submit">Guardar Cambios en peliculas</button>
+                <a href="modficaciones.html">Cancelar</a>
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="/static/modificaciones.js"></script>
+</body>
+</html>

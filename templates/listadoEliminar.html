@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>FALSEBUSTER | Eliminar peliculas</title>
+</head>
+<body>
+    <h1>FALSEBUSTER</h1>
+    <h2>Baja de peliculas</h2>
+    <h3>Codo a Codo | 2023</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>IDpeli</th>
+                <th>Título</th>
+                <th>Año</th>
+                <th>Clasificacíon</th>
+                <th>Calificación</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="pelicula in peliculas">
+                <td>{{pelicula.IDpeli}}</td>
+                <td>{{pelicula.Titulo}}</td>
+                <td>{{pelicula.Año}}</td>
+                <td>{{pelicula.Clasificación}}</td>
+                <td>{{pelicula.Calificación}}</td>
+                <td>{{pelicula.Imagen}}</td>
+                <td><button @click="eliminarPelicula(pelicula.IDpeli)">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="contenedor-centrado">
+        <a href="index.html">Menú principal</a>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="/static/listadoEliminar.js"></script>
+
+</body>
+</html>
